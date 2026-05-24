@@ -1,0 +1,39 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.tgz
+
+# IDE
+.vscode/
+.idea/
+.DS_Store
+*.swp
+*.swo
+*~
+.env.local
+.env.*.local
+
+# Local development
+.env
+.env.local
+.env.*.local
+
+# Cloudflare Workers
+.wrangler/
+dist/
+build/
+
+# Secrets (CRITICAL - prevent accidental commits)
+*.secret
+*.token
+secrets.json
+.secrets.json
+
+# Never commit these files
+!.gitignore
+!README.md
+!MANIFESTO.md
+!package.json
+!package-lock.json

@@ -1,0 +1,28 @@
+{
+  "name": "open-wegram-bot",
+  "version": "1.0.0",
+  "description": "Ephemeral edge event sink for authentic confessions. Stateless, no-retry, no-persistence architecture.",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "deploy": "wrangler deploy --env production",
+    "deploy:staging": "wrangler deploy --env staging",
+    "logs": "wrangler tail --env production",
+    "logs:staging": "wrangler tail --env staging",
+    "secret:set": "node scripts/setup-secrets.js"
+  },
+  "keywords": [
+    "telegram",
+    "bot",
+    "confession",
+    "ephemeral",
+    "stateless",
+    "cloudflare",
+    "workers"
+  ],
+  "author": "xxmao2006-lab",
+  "license": "MIT",
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  }
+}
