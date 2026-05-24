@@ -1,0 +1,25 @@
+name = "open-wegram-bot"
+main = "src/index.js"
+compatibility_date = "2024-11-21"
+compatibility_flags = ["nodejs_compat"]
+
+[env.production]
+vars = { ENVIRONMENT = "production", PREFIX = "" }
+secrets = ["SECRET_TOKEN", "TG_TOKEN", "GROUP_ID"]
+routes = [
+  { pattern = "wegram.bot/*", zone_name = "example.com" }
+]
+
+[env.staging]
+vars = { ENVIRONMENT = "staging", PREFIX = "staging_" }
+secrets = ["SECRET_TOKEN", "TG_TOKEN", "GROUP_ID"]
+routes = [
+  { pattern = "staging-wegram.bot/*", zone_name = "example.com" }
+]
+
+[build]
+command = "npm install"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_database = "wegram_logs"
